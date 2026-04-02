@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+:root {
+  --bg: 255 255 255;
+  --muted: 100 116 139;
+  --brand: 99 102 241;
+  --radius: 0.75rem;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html, body, #root {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  background-color: rgb(var(--bg));
+  color: hsl(var(--foreground));
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.text-gradient {
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #F38020 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.btn-gradient {
+  background: linear-gradient(135deg, #6366f1 0%, #F38020 100%);
+  color: white;
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.2s ease;
+}
+.btn-gradient:hover {
+  opacity: 0.95;
+  transform: scale(1.02);
+}
+.btn-gradient:active {
+  transform: scale(0.98);
+}
+/*
+   FORCED HIGH-VISIBILITY OVERRIDES
+   Ensures Dialogs and AlertMenus are readable regardless of theme state.
+*/
+[role="dialog"][class*="fixed"],
+[role="alertdialog"][class*="fixed"] {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  border: 1px solid #e2e8f0 !important;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.3) !important;
+}
+[role="dialog"] h2, [role="dialog"] h3,
+[role="alertdialog"] h2, [role="alertdialog"] h3 {
+  color: #0f172a !important;
+  font-weight: 800 !important;
+}
+[role="dialog"] p, [role="alertdialog"] p {
+  color: #475569 !important;
+}
+[role="dialog"] label {
+  color: #1e293b !important;
+  font-weight: 700 !important;
+  font-size: 0.875rem !important;
+}
+[role="dialog"] input, [role="dialog"] textarea {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  border-color: #cbd5e1 !important;
+  border-width: 2px !important;
+}
+[role="dialog"] input:focus {
+  border-color: #6366f1 !important;
+  outline: none !important;
+}
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
